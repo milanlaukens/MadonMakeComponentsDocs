@@ -1,0 +1,131 @@
+---
+title: Nav
+description: Top navigation bar with alignment, position, and color props.
+---
+
+import { Aside, Card, Tabs, TabItem, Code } from '@astrojs/starlight/components';
+import { Nav } from '@milanlaukens/mmui';
+
+A top navigation bar for portfolio sites. Supports left or right alignment, custom background color, and a `position` prop so it can be previewed inline inside docs without conflicting with Starlight's own header.
+
+## Preview
+
+<Card>
+  <Nav position="relative" />
+</Card>
+
+## Installation
+
+```bash
+npm install @milanlaukens/mmui
+```
+
+## Usage
+
+```astro
+---
+import { Nav } from '@milanlaukens/mmui';
+---
+
+<Nav />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `align` | `"left"` \| `"right"` | `"left"` | Which side the nav items sit on |
+| `position` | `"fixed"` \| `"relative"` \| `"static"` | `"fixed"` | CSS position value. Use `"relative"` for previews inside docs |
+| `background` | `string` | `"rgba(0,0,0,0.85)"` | Any valid CSS color string |
+| `logo` | `string` | — | Path to your logo image |
+| `logoAlt` | `string` | `"Logo"` | Alt text for the logo |
+
+## Variants
+
+### Align left (default)
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Nav position="relative" align="left" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Nav align="left" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Align right
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Nav position="relative" align="right" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Nav align="right" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Custom background — dark
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Nav position="relative" align="left" background="#1a1a2e" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Nav background="#1a1a2e" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Custom background — light
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Nav position="relative" align="left" background="rgba(255, 255, 255, 0.9)" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Nav background="rgba(255, 255, 255, 0.9)" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### With logo
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Nav position="relative" align="left" logo="https://placehold.co/80x32/888/fff?text=LOGO" logoAlt="My Brand" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Nav logo="/images/logo.png" logoAlt="My Brand" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### With logo — right aligned
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Nav position="relative" align="right" logo="https://placehold.co/80x32/888/fff?text=LOGO" logoAlt="My Brand" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Nav align="right" logo="/images/logo.png" logoAlt="My Brand" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## Notes
+
+<Aside type="tip">
+  In your actual project, `position` defaults to `"fixed"` so the nav sticks to the top of the viewport. Only pass `position="relative"` when previewing inside a documentation page.
+</Aside>
+
+<Aside type="caution">
+  The Nav component assumes a **dark background** by default. If your site uses a light background, pass a light color to `background` and adjust your text colors via CSS.
+</Aside>

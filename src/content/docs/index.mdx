@@ -1,0 +1,106 @@
+---
+title: MMUI — Component Library
+description: A minimal Astro component library built for portfolio websites.
+template: splash
+hero:
+  tagline: Minimal, composable Astro components for building portfolio websites. Import once, use anywhere.
+  actions:
+    - text: Browse Blocks
+      link: /blocks/nav
+      icon: right-arrow
+      variant: primary
+    - text: Browse Primitives
+      link: /primitives/actions/button
+      icon: right-arrow
+      variant: secondary
+---
+
+import { Card, CardGrid, LinkCard, Aside, Badge } from '@astrojs/starlight/components';
+
+## What's inside
+
+<CardGrid stagger>
+  <Card title="Blocks" icon="puzzle">
+    Full page sections ready to drop in. Nav, Hero, About, ProjectGrid, Footer and more — everything a portfolio page needs.
+  </Card>
+  <Card title="Primitives" icon="seti:config">
+    The small building blocks. Buttons, typography, layout helpers, feedback indicators — composable pieces that power the blocks above.
+  </Card>
+  <Card title="Typed Props" icon="seti:typescript">
+    Every component is written in Astro with a full TypeScript `Props` interface. Your editor autocompletes every prop, every time.
+  </Card>
+  <Card title="Zero build step" icon="rocket">
+    Raw `.astro` files published to npm. No compiled output, no bundler config. Your Astro project compiles them directly.
+  </Card>
+</CardGrid>
+
+## Get started
+
+<Aside type="tip" title="Prerequisites">
+  You need an Astro project (v4 or higher) to use MMUI. If you don't have one yet, run `npm create astro@latest`.
+</Aside>
+
+Install the package:
+
+```bash
+npm install @milanlaukens/mmui
+```
+
+Import any component you need:
+
+```astro
+---
+import { Nav, Hero, ProjectGrid } from '@milanlaukens/mmui';
+---
+
+<Nav align="left" background="#0f0f0f" />
+<Hero />
+<ProjectGrid />
+```
+
+That's it — no config files, no providers, no wrappers.
+
+## Blocks <Badge text="9 components" variant="note" />
+
+Blocks are full sections meant to be composed into a page. Each block accepts props to customize content, alignment, and color.
+
+<CardGrid>
+  <LinkCard title="Nav" description="Top navigation bar with alignment and color props." href="/blocks/nav" />
+  <LinkCard title="Hero" description="Full-width intro section with heading, tagline, and CTA." href="/blocks/hero" />
+  <LinkCard title="About" description="Bio section with avatar, text, and optional skills." href="/blocks/about" />
+  <LinkCard title="Project Card" description="Single portfolio piece with image, title, and tags." href="/blocks/project-card" />
+  <LinkCard title="Project Grid" description="Responsive grid of ProjectCards." href="/blocks/project-grid" />
+  <LinkCard title="Skills List" description="Tech stack or skills section with badge-style tags." href="/blocks/skills-list" />
+  <LinkCard title="Testimonial" description="Client or peer quote with avatar and name." href="/blocks/testimonial" />
+  <LinkCard title="Contact Form" description="Get in touch form with inputs and submit button." href="/blocks/contact-form" />
+  <LinkCard title="Footer" description="Bottom bar with links, socials, and copyright." href="/blocks/footer" />
+</CardGrid>
+
+## Primitives <Badge text="14 components" variant="note" />
+
+Primitives are the smallest reusable units. They are used inside blocks but can also be used directly in your project.
+
+<CardGrid>
+  <LinkCard title="Button" description="Primary, secondary, outline, ghost, and destructive variants." href="/primitives/actions/button" />
+  <LinkCard title="Heading" description="h1–h6 with size and weight props." href="/primitives/typography/heading" />
+  <LinkCard title="Text" description="Paragraph component with size, weight, and color props." href="/primitives/typography/text" />
+  <LinkCard title="Link" description="Styled anchor tag, distinct from Button." href="/primitives/typography/link" />
+  <LinkCard title="Avatar" description="Profile circle with image or fallback initials." href="/primitives/media/avatar" />
+  <LinkCard title="Image" description="Wrapper with lazy loading and aspect ratio handling." href="/primitives/media/image" />
+  <LinkCard title="Icon" description="Icon component wrapping your icon set." href="/primitives/media/icon" />
+  <LinkCard title="Divider" description="Horizontal or vertical rule." href="/primitives/media/divider" />
+  <LinkCard title="Badge" description="Small pill label for status or category." href="/primitives/feedback/badge" />
+  <LinkCard title="Tooltip" description="Hover balloon for additional context." href="/primitives/feedback/tooltip" />
+  <LinkCard title="Container" description="Max-width wrapper that centers content." href="/primitives/layout/container" />
+  <LinkCard title="Stack" description="Flex wrapper with consistent vertical or horizontal gap." href="/primitives/layout/stack" />
+  <LinkCard title="Grid" description="CSS grid wrapper with configurable columns." href="/primitives/layout/grid" />
+  <LinkCard title="Spacer" description="Empty block with configurable height or width." href="/primitives/layout/spacer" />
+</CardGrid>
+
+## Philosophy
+
+<Aside type="note">
+  MMUI follows a two-tier component model — **Primitives** and **Blocks** — instead of full Atomic Design. No pages, no templates. Those belong in your project, not the library.
+</Aside>
+
+The goal is a library that feels like a toolbox, not a framework. You import exactly what you need, customize it through props, and own the layout entirely. Nothing is magic, nothing is hidden.
