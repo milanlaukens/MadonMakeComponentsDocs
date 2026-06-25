@@ -1,0 +1,19 @@
+/* packages/docs/src/styles/global.css
+
+/* Existing fixes */
+/* .sl-markdown-content li + li { margin-top: 0; }
+.sl-markdown-content ul,
+.sl-markdown-content ol      { padding-left: 0; }
+.sl-markdown-content p       { margin-top: 0; }
+.sl-markdown-content a       { color: inherit; text-decoration: inherit; }
+.sl-markdown-content img     { margin: 0; }
+
+Fix button bleed — Starlight's :not() selectors still reach mmui buttons 
+.sl-markdown-content :not(a, strong, em, del, span, input, code, br) + :not(a, strong, em, del, span, input, code, br) {
+  margin-top: 0;
+}  */
+
+/* Kill ALL margin/padding resets inside mmui previews specifically */
+.mmui-preview * + * {
+  margin-top: 0 !important;
+}

@@ -1,0 +1,284 @@
+---
+title: Button
+description: A button triggers an event or action. Lets users know what will happen next.
+---
+
+import { Aside, Card, Tabs, TabItem, Code } from '@astrojs/starlight/components';
+import { Button } from '@milanlaukens/mmui';
+
+A button triggers an event or action. They let users know what will happen next.
+
+## Preview
+
+<Card>
+  <div class="not-content" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+    <Button label="Default" />
+    <Button label="Primary" variant="primary" />
+    <Button label="Warning" variant="warning" />
+    <Button label="Danger" variant="danger" />
+    <Button label="Subtle" variant="subtle" />
+    <Button label="Link" variant="link" />
+  </div>
+</Card>
+
+## Installation
+
+```bash
+npm install @milanlaukens/mmui
+```
+
+## Usage
+
+```astro
+---
+import { Button } from '@milanlaukens/mmui';
+---
+<div class="not-content">
+
+<Button label="Click me" />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `label` | `string` | — | Button text |
+| `variant` | `"default"` \| `"primary"` \| `"warning"` \| `"danger"` \| `"subtle"` \| `"link"` | `"default"` | Visual style |
+| `size` | `"sm"` \| `"md"` \| `"lg"` | `"md"` | Size scale |
+| `spacing` | `"default"` \| `"compact"` \| `"none"` | `"default"` | Inner padding |
+| `disabled` | `boolean` | `false` | Disables the button |
+| `selected` | `boolean` | `false` | Marks the button as selected |
+| `loading` | `boolean` | `false` | Shows a spinner and blocks clicks |
+| `fullWidth` | `boolean` | `false` | Stretches to 100% of its container |
+| `href` | `string` | — | Renders as an `<a>` tag instead of `<button>` |
+| `iconBefore` | `string` | — | Raw SVG string rendered before the label |
+| `iconAfter` | `string` | — | Raw SVG string rendered after the label |
+
+## Variants
+
+### Default
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+    
+      <Button label="Default" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Default" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Primary
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Button label="Primary" variant="primary" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Primary" variant="primary" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Warning
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Button label="Warning" variant="warning" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Warning" variant="warning" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Danger
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Button label="Danger" variant="danger" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Danger" variant="danger" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Subtle
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Button label="Subtle" variant="subtle" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Subtle" variant="subtle" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Link
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Button label="Learn more" variant="link" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Learn more" variant="link" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## States
+
+### Disabled
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <div class="not-content" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <Button label="Default" disabled />
+        <Button label="Primary" variant="primary" disabled />
+        <Button label="Danger" variant="danger" disabled />
+      </div>
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Default" disabled />\n<Button label="Primary" variant="primary" disabled />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Selected
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <div class="not-content" style="display: flex; gap: 0.5rem;">
+        <Button label="All" selected />
+        <Button label="Active" />
+        <Button label="Archived" />
+      </div>
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="All" selected />\n<Button label="Active" />\n<Button label="Archived" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+### Loading
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <div class="not-content" style="display: flex; gap: 0.5rem;">
+        <Button label="Saving..." loading />
+        <Button label="Saving..." variant="primary" loading />
+      </div>
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Saving..." loading />\n<Button label="Saving..." variant="primary" loading />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## Spacing
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <div class="not-content" style="display: flex; gap: 0.5rem; align-items: center;">
+        <Button label="Default spacing" spacing="default" />
+        <Button label="Compact spacing" spacing="compact" />
+      </div>
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Default spacing" spacing="default" />\n<Button label="Compact spacing" spacing="compact" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## Full width
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <Button label="Full width" fullWidth variant="primary" />
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Full width" fullWidth variant="primary" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## Sizes
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <div class="not-content" style="display: flex; gap: 0.5rem; align-items: center;">
+        <Button label="Small" size="sm" variant="primary" />
+        <Button label="Medium" size="md" variant="primary" />
+        <Button label="Large" size="lg" variant="primary" />
+      </div>
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Small" size="sm" />\n<Button label="Medium" size="md" />\n<Button label="Large" size="lg" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## With icon
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <div class="not-content" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <Button
+          label="Add item"
+          variant="primary"
+          iconBefore='<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+        />
+        <Button
+          label="Next"
+          variant="default"
+          iconAfter='<svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        />
+      </div>
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button\n  label="Add item"\n  variant="primary"\n  iconBefore='<svg viewBox="0 0 16 16">...</svg>'\n/>\n\n<Button\n  label="Next"\n  iconAfter='<svg viewBox="0 0 16 16">...</svg>'\n/>`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## As a link
+
+<Tabs>
+  <TabItem label="UI">
+    <Card>
+      <div class="not-content" style="display: flex; gap: 0.5rem;">
+        <Button label="Go to docs" href="/docs" variant="primary" />
+        <Button label="Learn more" href="/about" variant="subtle" />
+      </div>
+    </Card>
+  </TabItem>
+  <TabItem label="Code">
+    <Code code={`<Button label="Go to docs" href="/docs" variant="primary" />\n<Button label="Learn more" href="/about" variant="subtle" />`} lang="astro" />
+  </TabItem>
+</Tabs>
+
+## Notes
+
+<Aside type="tip">
+  When `href` is provided, the button renders as an `<a>` tag instead of a `<button>`. The `disabled` prop still works — it adds `aria-disabled` and a `not-allowed` cursor, but since `<a>` tags can't be natively disabled, clicks are blocked via CSS `pointer-events: none`.
+</Aside>
+
+<Aside type="caution">
+  The `iconBefore` and `iconAfter` props accept raw SVG strings. Make sure your SVG uses `currentColor` for stroke and fill so the icon color adapts automatically to the button variant.
+</Aside>
